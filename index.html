@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Participants à un atelier</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <p class="eyebrow">YOUCODE · ATELIER JAVASCRIPT</p>
+        <h1>Les participants à l’atelier</h1>
+        <p class="intro">Inscrivez les participants et suivez leur présence.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="titre-inscription">
+        <div class="section-heading">
+          <span class="step" aria-hidden="true">01</span>
+          <div>
+            <h2 id="titre-inscription">Ajouter un participant</h2>
+            <p>Chaque nouvelle inscription commence au statut « Inscrit ».</p>
+          </div>
+        </div>
+        <form id="formulaire-participant" novalidate>
+          <div class="form-field">
+            <label for="nom">Nom du participant</label>
+            <input
+              id="nom"
+              name="nom"
+              type="text"
+              placeholder="Ex. : Salma Bennani"
+              required
+              aria-describedby="erreur-nom"
+            />
+            <p id="erreur-nom" class="error" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="button button-primary">Ajouter</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="titre-participants">
+        <div class="section-heading list-heading">
+          <div class="heading-group">
+            <span class="step" aria-hidden="true">02</span>
+            <div>
+              <h2 id="titre-participants">Liste des participants</h2>
+              <p>Un clic pour indiquer ou annuler une présence.</p>
+            </div>
+          </div>
+          <div class="legend" aria-label="Statuts possibles">
+            <span class="badge badge-inscrit">Inscrit</span>
+            <span class="badge badge-present">Présent</span>
+          </div>
+        </div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+
+        <!-- Exemples statiques : remplacer ces trois lignes par un affichage JS. -->
+        <ul id="liste-participants" class="participants">
+          <li class="participant">
+            <div class="participant-info">
+              <span class="participant-id">#101</span>
+              <div>
+                <h3 class="participant-name">Salma Bennani</h3>
+                <span class="badge badge-inscrit">Inscrit</span>
+              </div>
+            </div>
+            <div class="participant-actions">
+              <button
+                type="button"
+                class="button button-presence"
+                aria-label="Marquer Salma Bennani présente"
+              >
+                Marquer présent
+              </button>
+              <button
+                type="button"
+                class="button button-delete"
+                aria-label="Supprimer Salma Bennani"
+              >
+                Supprimer
+              </button>
+            </div>
+          </li>
+          <li class="participant est-present">
+            <div class="participant-info">
+              <span class="participant-id">#102</span>
+              <div>
+                <h3 class="participant-name">Youssef Amrani</h3>
+                <span class="badge badge-present">Présent</span>
+              </div>
+            </div>
+            <div class="participant-actions">
+              <button
+                type="button"
+                class="button button-presence"
+                aria-label="Remettre Youssef Amrani au statut Inscrit"
+              >
+                Remettre inscrit
+              </button>
+              <button
+                type="button"
+                class="button button-delete"
+                aria-label="Supprimer Youssef Amrani"
+              >
+                Supprimer
+              </button>
+            </div>
+          </li>
+          <li class="participant">
+            <div class="participant-info">
+              <span class="participant-id">#103</span>
+              <div>
+                <h3 class="participant-name">Lina Idrissi</h3>
+                <span class="badge badge-inscrit">Inscrit</span>
+              </div>
+            </div>
+            <div class="participant-actions">
+              <button
+                type="button"
+                class="button button-presence"
+                aria-label="Marquer Lina Idrissi présente"
+              >
+                Marquer présent
+              </button>
+              <button
+                type="button"
+                class="button button-delete"
+                aria-label="Supprimer Lina Idrissi"
+              >
+                Supprimer
+              </button>
+            </div>
+          </li>
+        </ul>
+        <div id="etat-vide" class="empty-state" hidden>
+          <h3>Aucun participant pour le moment</h3>
+          <p>Utilisez le formulaire pour inscrire une première personne.</p>
+        </div>
+      </section>
+      <footer class="page-footer">
+        Atelier JavaScript · Gestion des inscriptions et des présences
+      </footer>
+    </main>
+  </body>
+</html>
